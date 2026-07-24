@@ -302,61 +302,58 @@ font-size:20px;
 
 function afficherRevelation(){
 
-    overlayMessage.innerHTML +=`
+    overlayMessage.innerHTML=`
         <div style="font-size:60px;">⚠️</div>
 
         <div style="
             font-size:38px;
             font-weight:700;
             margin-top:10px;
+            color:#ffd54f;
         ">
             DÉMONSTRATION DE QUISHING
         </div>
     `;
 
-    infos.innerHTML=`
+    infos.innerHTML += `
 
-<div style="font-size:22px;line-height:1.8;">
+<hr style="
+margin:30px 0;
+border:0;
+border-top:1px solid rgba(255,255,255,.2);
+">
 
-Vous venez de participer à une démonstration de
-<b>Quishing</b>.
+<div style="
+text-align:center;
+font-size:26px;
+font-weight:600;
+line-height:1.5;
+margin-bottom:25px;
+">
 
-<br><br>
-
-Vous n'avez saisi aucune information sur cette page.
-Pourtant, un simple site web peut déjà connaître certains éléments de votre navigateur et de votre appareil.
-
-<br><br>
-
-Aucun piratage n'a été réalisé.
-
-<br><br>
-
-Imaginez maintenant ce qu'un faux site peut vous demander volontairement :
-
-<ul style="margin-top:15px;text-align:left;display:inline-block;">
-<li>Adresse e-mail</li>
-<li>Mot de passe</li>
-<li>Numéro de carte bancaire</li>
-<li>Code de validation SMS</li>
-<li>Données personnelles</li>
-</ul>
-
-<br>
-
-<div style="text-align:center;margin-top:35px;">
-
-<img src="images/logo-comcyber-mi.png"
-     style="width:160px;margin-bottom:18px;">
+Vous venez de participer<br>
+à une démonstration de Quishing.
 
 </div>
 
-<div style="font-size:18px;opacity:.9;margin-top:8px;">
-Commandement du ministère de l'Intérieur
-dans le cyberespace
+<div style="text-align:center;">
+
+<img
+src="images/logo-comcyber-mi.png"
+alt="COMCYBER-MI"
+style="
+width:280px;
+background:white;
+padding:12px;
+border-radius:12px;
+">
+
 </div>
 
-<br>
+<div style="
+text-align:center;
+margin-top:35px;
+">
 
 <button id="rejouerDemo"
 style="
@@ -368,9 +365,10 @@ color:white;
 font-size:18px;
 font-weight:bold;
 cursor:pointer;
-margin-top:25px;
 ">
-🔄 Rejouer la démonstration
+
+↺ Recommencer
+
 </button>
 
 </div>
@@ -381,6 +379,8 @@ margin-top:25px;
         .addEventListener("click",()=>{
 
             overlay.classList.add("hidden");
+
+            document.querySelector(".loader").style.display="block";
 
             bouton.disabled=false;
 
