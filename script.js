@@ -1,7 +1,15 @@
 // ======================================
-// GRAND JEU DE L'ÉTÉ - VERSION 2.0
+// GRAND JEU DE L'ÉTÉ
+// Démonstration Quishing
 // COMCYBER-MI
 // ======================================
+
+
+
+// -------------------------------------------------
+// Détection du navigateur
+// -------------------------------------------------
+
 function detecterNavigateur(){
 
     const ua = navigator.userAgent;
@@ -21,118 +29,180 @@ function detecterNavigateur(){
     return "Navigateur inconnu";
 
 }
-// ------------------------------
-// Participants
-// ------------------------------
+
+
+
+// -------------------------------------------------
+// Détection du système
+// -------------------------------------------------
+
+function detecterSysteme(){
+
+    const ua = navigator.userAgent;
+
+    if(ua.includes("Windows")) return "Windows";
+
+    if(ua.includes("Mac")) return "macOS";
+
+    if(ua.includes("Android")) return "Android";
+
+    if(ua.includes("iPhone") || ua.includes("iPad"))
+        return "iOS";
+
+    if(ua.includes("Linux"))
+        return "Linux";
+
+    return "Inconnu";
+
+}
+
+
+
+// -------------------------------------------------
+// Compteur participants
+// -------------------------------------------------
 
 let participants = 18458;
 
 const compteur = document.getElementById("participants");
 
-setInterval(() => {
-    participants += Math.floor(Math.random() * 3) + 1;
-    compteur.textContent = participants.toLocaleString("fr-FR");
-}, 3500);
+setInterval(()=>{
+
+    participants += Math.floor(Math.random()*3)+1;
+
+    compteur.textContent =
+        participants.toLocaleString("fr-FR");
+
+},3500);
 
 
-// ------------------------------
-// Animation du bouton
-// ------------------------------
 
-const bouton = document.getElementById("participer");
 
-let agrandir = true;
+// -------------------------------------------------
+// Animation bouton
+// -------------------------------------------------
 
-setInterval(() => {
+const bouton =
+document.getElementById("participer");
 
-    bouton.style.transform = agrandir
+let agrandir=true;
+
+setInterval(()=>{
+
+    bouton.style.transform=
+        agrandir
         ? "scale(1.03)"
         : "scale(1)";
 
-    agrandir = !agrandir;
+    agrandir=!agrandir;
 
 },700);
 
 
-// ------------------------------
+
+
+// -------------------------------------------------
 // Compte à rebours
-// ------------------------------
+// -------------------------------------------------
 
-let secondes = (1 * 24 * 3600) + (14 * 3600) + (26 * 60);
+let secondes =
+(1*24*3600)+(14*3600)+(26*60);
 
-const countdown = document.getElementById("countdown");
+const countdown =
+document.getElementById("countdown");
 
 function actualiserCompteur(){
 
     if(secondes>0){
+
         secondes--;
+
     }
 
-    const jours = Math.floor(secondes / 86400);
-    const heures = Math.floor((secondes % 86400)/3600);
-    const minutes = Math.floor((secondes % 3600)/60);
+    const jours =
+        Math.floor(secondes/86400);
 
-const secondesRestantes = secondes % 60;
+    const heures =
+        Math.floor((secondes%86400)/3600);
 
-countdown.innerHTML = `
-<div style="font-size:36px;font-weight:700;">
-${String(jours).padStart(2,"0")} : ${String(heures).padStart(2,"0")} : ${String(minutes).padStart(2,"0")} : ${String(secondesRestantes).padStart(2,"0")}
-</div>
+    const minutes =
+        Math.floor((secondes%3600)/60);
 
-<div style="
-font-size:12px;
-letter-spacing:2px;
-margin-top:6px;
-color:#ffd0d0;">
-JOURS&nbsp;&nbsp;&nbsp;&nbsp;HEURES&nbsp;&nbsp;&nbsp;&nbsp;MINUTES&nbsp;&nbsp;&nbsp;&nbsp;SECONDES
-</div>
-`;
+    countdown.innerHTML=`
+
+        <div style="font-size:54px;font-weight:700;line-height:1.15;">
+
+            ${jours}j<br>
+
+            ${heures}h<br>
+
+            ${minutes}min
+
+        </div>
+
+    `;
 
 }
 
 actualiserCompteur();
+
 setInterval(actualiserCompteur,1000);
 
 
-// ------------------------------
+
+
+// -------------------------------------------------
 // Overlay
-// ------------------------------
+// -------------------------------------------------
 
-const overlay = document.getElementById("overlay");
-const overlayMessage = document.getElementById("overlayMessage");
-const progressBar = document.getElementById("progressBar");
-const infos = document.getElementById("infosDetectees");
+const overlay =
+document.getElementById("overlay");
 
-const messages = [
+const overlayMessage =
+document.getElementById("overlayMessage");
 
-    "Connexion sécurisée...",
+const progressBar =
+document.getElementById("progressBar");
 
-    "Vérification de votre participation...",
+const infos =
+document.getElementById("infosDetectees");
 
-    "Recherche d'un gagnant...",
+const messages=[
 
-    "Analyse de compatibilité...",
+"Connexion sécurisée...",
 
-    "Validation des informations..."
+"Vérification de votre participation...",
+
+"Recherche d'un gagnant...",
+
+"Analyse de compatibilité...",
+
+"Validation des informations..."
 
 ];
 
 
-// ------------------------------
-// Clic sur PARTICIPER
-// ------------------------------
 
-bouton.addEventListener("click",demarrerDemo);
+
+// -------------------------------------------------
+// Lancement démonstration
+// -------------------------------------------------
+
+bouton.addEventListener(
+"click",
+demarrerDemo
+);
 
 function demarrerDemo(){
 
-    bouton.disabled = true;
+    bouton.disabled=true;
 
     overlay.classList.remove("hidden");
 
     progressBar.style.width="0%";
 
     infos.style.display="none";
+
     infos.innerHTML="";
 
     let progression=0;
@@ -143,7 +213,8 @@ function demarrerDemo(){
 
         progression++;
 
-        progressBar.style.width=progression+"%";
+        progressBar.style.width=
+        progression+"%";
 
         if(progression===20)
             overlayMessage.innerHTML=messages[1];
@@ -168,9 +239,6 @@ function demarrerDemo(){
     },55);
 
 }
-
-
-
 // ------------------------------
 // Félicitations
 // ------------------------------
@@ -219,12 +287,12 @@ function lancerGlitch(){
 
 }
 // ------------------------------
-// Analyse du navigateur
+// Analyse
 // ------------------------------
 
-function lancerAnalyse(){
+async function lancerAnalyse(){
 
-    overlayMessage.innerHTML=`
+    overlayMessage.innerHTML = `
         <div style="font-size:52px;">🔍</div>
         <div style="font-size:34px;font-weight:700;margin-top:10px;">
             Analyse de votre appareil...
@@ -234,108 +302,143 @@ function lancerAnalyse(){
     infos.style.display="block";
     infos.innerHTML="";
 
+    //---------------------------------------------------
+    // Adresse IP + Pays
+    //---------------------------------------------------
+
+    let ip="Non disponible";
+    let pays="Non disponible";
+
+    try{
+
+        const reponse =
+        await fetch("https://ipapi.co/json/");
+
+        const data =
+        await reponse.json();
+
+        ip=data.ip;
+        pays=data.country_name;
+
+    }
+
+    catch(e){
+
+        console.log("Impossible de récupérer l'adresse IP.");
+
+    }
+
+    //---------------------------------------------------
+    // Langue lisible
+    //---------------------------------------------------
+
+    const langue =
+        new Intl.DisplayNames(
+            ['fr'],
+            {type:'language'}
+        ).of(
+            navigator.language.split("-")[0]
+        )
+        +" ("+
+        navigator.language.toUpperCase()+
+        ")";
+
+    //---------------------------------------------------
+    // Liste
+    //---------------------------------------------------
+
     const liste=[
+
         {
             titre:"Navigateur",
-           valeur:detecterNavigateur()
-             function detecterSysteme(){
-
-    const ua = navigator.userAgent;
-
-    if(ua.includes("Windows"))
-        return "Windows";
-
-    if(ua.includes("Mac"))
-        return "macOS";
-
-    if(ua.includes("Android"))
-        return "Android";
-
-    if(ua.includes("iPhone") || ua.includes("iPad"))
-        return "iOS";
-
-    if(ua.includes("Linux"))
-        return "Linux";
-
-    return "Inconnu";
-
-}
+            valeur:detecterNavigateur()
         },
+
         {
-    titre:"Système",
-    valeur:detecterSysteme()
-},
-       
+            titre:"Système",
+            valeur:detecterSysteme()
+        },
+
+        {
+            titre:"Adresse IP",
+            valeur:ip
+        },
+
+        {
+            titre:"Pays",
+            valeur:pays
+        },
+
         {
             titre:"Langue",
-            valeur:navigator.language
+            valeur:langue
         },
+
         {
             titre:"Fuseau horaire",
             valeur:Intl.DateTimeFormat().resolvedOptions().timeZone
         },
+
         {
-            titre:"Résolution de l'écran",
-            valeur:screen.width+" × "+screen.height
+            titre:"Résolution",
+            valeur:
+            screen.width+
+            " × "+
+            screen.height
         },
+
         {
-            titre:"Taille de la fenêtre",
-            valeur:window.innerWidth+" × "+window.innerHeight
+            titre:"Mémoire",
+            valeur:
+            navigator.deviceMemory
+            ? navigator.deviceMemory+" Go"
+            : "Non communiquée"
         },
+
         {
-            titre:"Plateforme",
-            valeur:navigator.platform
+            titre:"CPU",
+            valeur:
+            navigator.hardwareConcurrency
+            ? navigator.hardwareConcurrency+" cœurs"
+            : "Non communiqué"
         },
-        {
-            titre:"Nombre de cœurs CPU",
-            valeur:navigator.hardwareConcurrency || "Non communiqué"
-        },
-        {
-            titre:"Mémoire de l'appareil",
-            valeur:navigator.deviceMemory
-                ? navigator.deviceMemory+" Go"
-                : "Non communiquée"
-        },
+
         {
             titre:"Écran tactile",
-            valeur:navigator.maxTouchPoints>0 ? "Oui" : "Non"
+            valeur:
+            navigator.maxTouchPoints>0
+            ? "Oui"
+            : "Non"
         }
+
     ];
 
+    //---------------------------------------------------
+    // Affichage progressif
+    //---------------------------------------------------
+
     let i=0;
-let adresseIP = "Recherche...";
 
-fetch("https://api.ipify.org?format=json")
-.then(reponse => reponse.json())
-.then(data => {
-
-    adresseIP = data.ip;
-
-    liste.splice(2,0,{
-        titre:"Adresse IP",
-        valeur:adresseIP
-    });
-
-});
     const timer=setInterval(()=>{
 
-      infos.innerHTML += `
-<div style="
-display:flex;
-justify-content:space-between;
-border-bottom:1px solid rgba(255,255,255,.15);
-padding:10px 0;
-font-size:20px;
-">
+        infos.innerHTML += `
 
-<span><b>${liste[i].titre}</b></span>
+        <div style="
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            padding:10px 0;
+            border-bottom:1px solid rgba(255,255,255,.15);
+            font-size:20px;
+        ">
 
-<span>${liste[i].valeur}</span>
+            <span><b>${liste[i].titre}</b></span>
 
-</div>
-`;
+            <span>${liste[i].valeur}</span>
 
-        infos.scrollTop=infos.scrollHeight;
+        </div>
+
+        `;
 
         i++;
 
@@ -343,15 +446,16 @@ font-size:20px;
 
             clearInterval(timer);
 
-            setTimeout(afficherRevelation,1500);
+            setTimeout(
+                afficherRevelation,
+                1200
+            );
 
         }
 
-    },900);
+    },700);
 
 }
-
-
 
 // ------------------------------
 // Révélation
