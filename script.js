@@ -54,8 +54,21 @@ function actualiserCompteur(){
     const heures = Math.floor((secondes % 86400)/3600);
     const minutes = Math.floor((secondes % 3600)/60);
 
-    countdown.innerHTML =
-        `${jours} j<br>${heures} h<br>${minutes} min`;
+const secondesRestantes = secondes % 60;
+
+countdown.innerHTML = `
+<div style="font-size:36px;font-weight:700;">
+${String(jours).padStart(2,"0")} : ${String(heures).padStart(2,"0")} : ${String(minutes).padStart(2,"0")} : ${String(secondesRestantes).padStart(2,"0")}
+</div>
+
+<div style="
+font-size:12px;
+letter-spacing:2px;
+margin-top:6px;
+color:#ffd0d0;">
+JOURS&nbsp;&nbsp;&nbsp;&nbsp;HEURES&nbsp;&nbsp;&nbsp;&nbsp;MINUTES&nbsp;&nbsp;&nbsp;&nbsp;SECONDES
+</div>
+`;
 
 }
 
