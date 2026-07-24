@@ -458,19 +458,20 @@ async function lancerAnalyse(){
 }
 
 // ------------------------------
-// Révélation
+// Révélation finale
 // ------------------------------
 
 function afficherRevelation(){
 
-    overlayMessage.innerHTML=`
-        <div style="font-size:60px;">⚠️</div>
+    overlayMessage.innerHTML = `
+        <div style="font-size:64px;">⚠️</div>
 
         <div style="
             font-size:38px;
             font-weight:700;
-            margin-top:10px;
+            margin-top:15px;
             color:#ffd54f;
+            letter-spacing:1px;
         ">
             DÉMONSTRATION DE QUISHING
         </div>
@@ -478,62 +479,86 @@ function afficherRevelation(){
 
     infos.innerHTML += `
 
-<hr style="
-margin:30px 0;
-border:0;
-border-top:1px solid rgba(255,255,255,.2);
-">
+        <hr style="
+            margin:35px 0;
+            border:none;
+            border-top:1px solid rgba(255,255,255,.20);
+        ">
 
-<div style="
-text-align:center;
-font-size:26px;
-font-weight:600;
-line-height:1.5;
-margin-bottom:25px;
-">
+        <div style="
+            text-align:center;
+            font-size:28px;
+            font-weight:600;
+            line-height:1.6;
+            margin-bottom:18px;
+        ">
 
-Vous venez de participer<br>
-à une démonstration de Quishing.
+            Vous venez de participer<br>
+            à une démonstration de <span style="color:#ffd54f;">Quishing</span>.
 
-</div>
+        </div>
 
-<div style="text-align:center;">
+        <div style="
+            text-align:center;
+            font-size:18px;
+            color:#d8d8d8;
+            line-height:1.7;
+            max-width:750px;
+            margin:0 auto 30px auto;
+        ">
 
-<img
-src="images/logo-comcyber-mi.png"
-alt="COMCYBER-MI"
-style="
-width:280px;
-background:white;
-padding:12px;
-border-radius:12px;
-">
+            En scannant un QR Code, il est possible de révéler de nombreuses
+            informations sur votre appareil avant même que vous ne saisissiez
+            le moindre identifiant ou mot de passe.
 
-</div>
+            <br><br>
 
-<div style="
-text-align:center;
-margin-top:35px;
-">
+            Dans une véritable attaque, une page frauduleuse pourrait ensuite
+            tenter de récupérer vos informations personnelles ou bancaires.
 
-<button id="rejouerDemo"
-style="
-padding:16px 34px;
-border:none;
-border-radius:12px;
-background:#ff9800;
-color:white;
-font-size:18px;
-font-weight:bold;
-cursor:pointer;
-">
+        </div>
 
-↺ Recommencer
+        <div style="text-align:center;">
 
-</button>
+            <img
+                src="images/logo-comcyber-mi.png"
+                alt="COMCYBER-MI"
+                style="
+                    width:280px;
+                    background:white;
+                    padding:12px;
+                    border-radius:14px;
+                    box-shadow:0 0 20px rgba(255,255,255,.15);
+                ">
 
-</div>
-`;
+        </div>
+
+        <div style="
+            text-align:center;
+            margin-top:35px;
+        ">
+
+            <button
+                id="rejouerDemo"
+                style="
+                    padding:16px 34px;
+                    border:none;
+                    border-radius:12px;
+                    background:#ff9800;
+                    color:white;
+                    font-size:18px;
+                    font-weight:bold;
+                    cursor:pointer;
+                    transition:.25s;
+                ">
+
+                ↺ Recommencer la démonstration
+
+            </button>
+
+        </div>
+
+    `;
 
     document
         .getElementById("rejouerDemo")
@@ -541,13 +566,17 @@ cursor:pointer;
 
             overlay.classList.add("hidden");
 
-            document.querySelector(".loader").style.display="block";
+            overlay.classList.remove("glitch");
 
-            bouton.disabled=false;
+            document.querySelector(".loader").style.display="block";
 
             progressBar.style.width="0%";
 
             infos.innerHTML="";
+
+            infos.style.display="none";
+
+            bouton.disabled=false;
 
         });
 
