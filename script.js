@@ -87,16 +87,19 @@ document.getElementById("participer");
 
 let agrandir=true;
 
-setInterval(()=>{
+setInterval(() => {
 
-    bouton.style.transform=
-        agrandir
-        ? "scale(1.03)"
-        : "scale(1)";
+    bouton.style.boxShadow = agrandir
+        ? "0 12px 35px rgba(255,152,0,.55)"
+        : "0 10px 25px rgba(0,0,0,.30)";
 
-    agrandir=!agrandir;
+    bouton.style.transform = agrandir
+        ? "translateY(-2px)"
+        : "translateY(0px)";
 
-},700);
+    agrandir = !agrandir;
+
+},900);
 
 
 
@@ -164,13 +167,15 @@ function actualiserCompteur(){
 
     </div>
 
-    <div style="
-    margin-top:12px;
-    font-size:18px;
-    color:white;
-    ">
-    avant la clôture du jeu
-    </div>
+   <div style="
+margin-top:12px;
+font-size:18px;
+color:#ffffff;
+font-weight:500;
+opacity:.9;
+">
+avant la clôture du jeu
+</div>
 
     `;
 }
