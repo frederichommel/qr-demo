@@ -114,37 +114,65 @@ document.getElementById("countdown");
 function actualiserCompteur(){
 
     if(secondes>0){
-
         secondes--;
-
     }
 
-    const jours =
-        Math.floor(secondes/86400);
-
-    const heures =
-        Math.floor((secondes%86400)/3600);
-
-    const minutes =
-        Math.floor((secondes%3600)/60);
+    const jours = Math.floor(secondes/86400);
+    const heures = Math.floor((secondes%86400)/3600);
+    const minutes = Math.floor((secondes%3600)/60);
 
     countdown.innerHTML = `
-<div style="
-font-size:62px;
-font-weight:800;
-color:#ff3b30;
-line-height:1.05;
-">
 
-${jours}<span style="font-size:42px;">j</span><br>
+    <div style="
+    color:#ff3b30;
+    font-size:30px;
+    font-weight:800;
+    margin-bottom:12px;
+    letter-spacing:2px;
+    ">
+    🔥 PLUS QUE
+    </div>
 
-${heures}<span style="font-size:42px;">h</span><br>
+    <div style="
+    display:flex;
+    justify-content:center;
+    align-items:flex-end;
+    gap:40px;
+    color:#ff3b30;
+    ">
 
-${minutes}<span style="font-size:42px;">min</span>
+        <div>
+            <span style="font-size:68px;font-weight:900;">
+                ${String(jours).padStart(2,"0")}
+            </span>
+            <span style="font-size:34px;font-weight:700;">j</span>
+        </div>
 
-</div>
-`;
+        <div>
+            <span style="font-size:68px;font-weight:900;">
+                ${String(heures).padStart(2,"0")}
+            </span>
+            <span style="font-size:34px;font-weight:700;">h</span>
+        </div>
 
+        <div>
+            <span style="font-size:68px;font-weight:900;">
+                ${String(minutes).padStart(2,"0")}
+            </span>
+            <span style="font-size:34px;font-weight:700;">min</span>
+        </div>
+
+    </div>
+
+    <div style="
+    margin-top:12px;
+    font-size:18px;
+    color:white;
+    ">
+    avant la clôture du jeu
+    </div>
+
+    `;
 }
 
 actualiserCompteur();
