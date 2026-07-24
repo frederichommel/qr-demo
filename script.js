@@ -293,7 +293,7 @@ function lancerAnalyse(){
 
 function afficherRevelation(){
 
-    overlayMessage.innerHTML=`
+    overlayMessage.innerHTML +=`
         <div style="font-size:60px;">⚠️</div>
 
         <div style="
