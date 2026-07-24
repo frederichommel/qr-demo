@@ -17,9 +17,9 @@ html,body{
 
 body{
 
-    background:
-        linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.35)),
-        url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1800&q=80");
+   background:
+    linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.35)),
+    url("images/plage.png");
 
     background-size:cover;
     background-position:center;
