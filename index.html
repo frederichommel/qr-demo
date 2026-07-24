@@ -2,120 +2,149 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Grand Jeu de l'Été 2026</title>
+<meta charset="UTF-8">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<title>Grand Jeu de l'Été 2026</title>
 
-    <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-<div class="overlay"></div>
+<div class="page">
 
-<div class="container">
+<header>
 
-    <div class="logo">
-        🌴
-    </div>
+<h1>🌴 GRAND JEU DE L'ÉTÉ</h1>
 
-    <h1>GRAND JEU DE L'ÉTÉ 2026</h1>
+<p class="slogan">
 
-    <p class="subtitle">
-        Votre été commence ici ☀️
-    </p>
+Votre été commence ici ☀️
 
-    <p class="description">
-        Tentez votre chance pour gagner un voyage exceptionnel pour deux personnes.
-    </p>
+</p>
 
-    <div class="cards">
+<p class="intro">
 
-        <div class="card">
-            <div class="emoji">🏝️</div>
-            <h2>Maldives</h2>
-            <p>7 nuits</p>
-            <span>Vol inclus</span>
-        </div>
+Tentez votre chance pour gagner un voyage exceptionnel pour deux personnes.
 
-        <div class="card">
-            <div class="emoji">🌺</div>
-            <h2>Polynésie</h2>
-            <p>10 nuits</p>
-            <span>Vol inclus</span>
-        </div>
+</p>
 
-        <div class="card">
-            <div class="emoji">🌴</div>
-            <h2>République Dominicaine</h2>
-            <p>7 nuits</p>
-            <span>Tout compris</span>
-        </div>
+</header>
 
-    </div>
+<section class="destinations">
 
-    <div class="stats">
+<div class="destination">
 
-        <div class="stat">
+<div class="emoji">🏝️</div>
 
-            <div class="icon">
-                👥
-            </div>
+<div class="infos">
 
-            <div id="participants">
-                18 452
-            </div>
+<h2>Maldives</h2>
 
-            <small>participants</small>
+<p>7 nuits • Vol inclus</p>
 
-        </div>
+</div>
 
-        <div class="stat">
+</div>
 
-            <div class="icon">
-                ⏳
-            </div>
+<div class="destination">
 
-            <div id="countdown">
+<div class="emoji">🌺</div>
 
-                <div class="time">
-                    <strong id="days">01</strong>
-                    <span>Jour</span>
-                </div>
+<div class="infos">
 
-                <div class="time">
-                    <strong id="hours">14</strong>
-                    <span>Heures</span>
-                </div>
+<h2>Polynésie</h2>
 
-                <div class="time">
-                    <strong id="minutes">26</strong>
-                    <span>Minutes</span>
-                </div>
+<p>10 nuits • Vol inclus</p>
 
-            </div>
+</div>
 
-        </div>
+</div>
 
-    </div>
+<div class="destination">
 
-    <button id="participer">
-        🎁 JE PARTICIPE GRATUITEMENT
-    </button>
+<div class="emoji">🌴</div>
 
-    <p class="footer">
-        Participation gratuite • Sans engagement • Tirage au sort officiel
-    </p>
+<div class="infos">
+
+<h2>République Dominicaine</h2>
+
+<p>7 nuits • Tout compris</p>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="urgence">
+
+<div class="titreUrgence">
+
+🔥 PLUS QUE
+
+</div>
+
+<div id="countdown">
+
+01 j
+
+14 h
+
+26 min
+
+</div>
+
+<p>
+
+avant la fin des inscriptions
+
+</p>
+
+</section>
+
+<section class="participants">
+
+<div class="nombre">
+
+👥 <span id="participants">18 458</span>
+
+</div>
+
+<div class="live">
+
+🟢 7 personnes viennent de s'inscrire
+
+</div>
+
+</section>
+
+<button id="participer">
+
+🎁 JE PARTICIPE GRATUITEMENT
+
+</button>
+
+<footer>
+
+Participation gratuite • Sans engagement
+
+</footer>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
