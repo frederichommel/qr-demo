@@ -238,12 +238,7 @@ function lancerAnalyse(){
         {
             titre:"Navigateur",
            valeur:detecterNavigateur()
-        },
-        {
-    titre:"Système",
-    valeur:detecterSysteme()
-},
-        function detecterSysteme(){
+             function detecterSysteme(){
 
     const ua = navigator.userAgent;
 
@@ -265,6 +260,12 @@ function lancerAnalyse(){
     return "Inconnu";
 
 }
+        },
+        {
+    titre:"Système",
+    valeur:detecterSysteme()
+},
+       
         {
             titre:"Langue",
             valeur:navigator.language
