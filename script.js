@@ -113,7 +113,33 @@ bouton.addEventListener("click", () => {
                     Votre participation a été sélectionnée.
                 </div>
             `;
+setTimeout(() => {
 
+    overlay.classList.add("glitch");
+
+}, 2000);
+
+setTimeout(() => {
+
+    overlay.classList.remove("glitch");
+
+    overlayMessage.innerHTML = `
+        <div style="font-size:60px;">⚠️</div>
+
+        <div style="font-size:38px;font-weight:bold;margin-top:10px;">
+            ATTENTION
+        </div>
+
+        <div style="margin-top:25px;font-size:22px;line-height:1.6;max-width:700px;">
+            Vous venez de participer à une démonstration de <b>Quishing</b>.
+
+            <br><br>
+
+            Un simple QR Code peut conduire vers un faux site extrêmement crédible.
+        </div>
+    `;
+
+}, 3000);
         }
 
     },80);
