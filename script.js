@@ -534,26 +534,6 @@ function afficherRevelation(){
 
         </div>
 
-        <div style="
-            text-align:center;
-            font-size:18px;
-            color:#d8d8d8;
-            line-height:1.7;
-            max-width:750px;
-            margin:0 auto 30px auto;
-        ">
-
-            En scannant un QR Code, il est possible de révéler de nombreuses
-            informations sur votre appareil avant même que vous ne saisissiez
-            le moindre identifiant ou mot de passe.
-
-            <br><br>
-
-            Dans une véritable attaque, une page frauduleuse pourrait ensuite
-            tenter de récupérer vos informations personnelles ou bancaires.
-
-        </div>
-
         <div style="text-align:center;">
 
             <img
