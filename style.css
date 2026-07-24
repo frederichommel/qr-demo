@@ -213,6 +213,42 @@ h1{
 
 }
 
+
+/* ========================= */
+/* Participants */
+/* ========================= */
+
+.participants{
+
+    margin-top:28px;
+
+    color:white;
+
+    text-align:left;
+
+}
+
+.nombre{
+
+    font-size:16px;
+
+    color:white;
+
+    font-weight:500;
+
+}
+
+.live{
+
+    margin-top:6px;
+
+    font-size:16px;
+
+    color:white;
+
+}
+
+
 /* ========================= */
 /* Bouton */
 /* ========================= */
