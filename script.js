@@ -429,17 +429,9 @@ async function lancerAnalyse(){
             navigator.deviceMemory
             ? navigator.deviceMemory+" Go"
             : "Non communiquée"
-        },
+      },
 
-        {
-            titre:"CPU",
-            valeur:
-            navigator.hardwareConcurrency
-            ? navigator.hardwareConcurrency+" cœurs"
-            : "Non communiqué"
-        },
-
-        {
+{
             titre:"Écran tactile",
             valeur:
             navigator.maxTouchPoints>0
