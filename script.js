@@ -128,19 +128,22 @@ function actualiserCompteur(){
     const minutes =
         Math.floor((secondes%3600)/60);
 
-    countdown.innerHTML=`
+    countdown.innerHTML = `
+<div style="
+font-size:62px;
+font-weight:800;
+color:#ff3b30;
+line-height:1.05;
+">
 
-        <div style="font-size:54px;font-weight:700;line-height:1.15;">
+${jours}<span style="font-size:42px;">j</span><br>
 
-            ${jours}j<br>
+${heures}<span style="font-size:42px;">h</span><br>
 
-            ${heures}h<br>
+${minutes}<span style="font-size:42px;">min</span>
 
-            ${minutes}min
-
-        </div>
-
-    `;
+</div>
+`;
 
 }
 
