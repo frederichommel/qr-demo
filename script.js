@@ -340,25 +340,6 @@ Imaginez maintenant ce qu'un faux site peut vous demander volontairement :
 <img src="images/logo-comcyber-mi.png"
      style="width:160px;margin-bottom:18px;">
 
-<div style="
-font-size:28px;
-font-weight:bold;
-letter-spacing:1px;">
-
-COMCYBER-MI
-
-</div>
-
-<div style="
-font-size:17px;
-opacity:.9;
-margin-top:8px;">
-
-Commandement du ministère de l'Intérieur<br>
-dans le cyberespace
-
-</div>
-
 </div>
 
 <div style="font-size:18px;opacity:.9;margin-top:8px;">
