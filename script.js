@@ -262,12 +262,21 @@ function lancerAnalyse(){
 
     const timer=setInterval(()=>{
 
-        infos.innerHTML+=`
-            <div style="margin:14px 0;">
-                ✅ <b>${liste[i].titre}</b><br>
-                <span style="opacity:.85">${liste[i].valeur}</span>
-            </div>
-        `;
+      infos.innerHTML += `
+<div style="
+display:flex;
+justify-content:space-between;
+border-bottom:1px solid rgba(255,255,255,.15);
+padding:10px 0;
+font-size:20px;
+">
+
+<span><b>${liste[i].titre}</b></span>
+
+<span>${liste[i].valeur}</span>
+
+</div>
+`;
 
         infos.scrollTop=infos.scrollHeight;
 
