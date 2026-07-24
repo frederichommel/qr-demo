@@ -2,96 +2,120 @@
 <html lang="fr">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Jeu de l'Été 2026</title>
 
-<title>Grand Jeu de l'Été 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="background">
-
-<div class="overlay">
+<div class="overlay"></div>
 
 <div class="container">
 
-<h1>☀️ GRAND JEU</h1>
+    <div class="logo">
+        🌴
+    </div>
 
-<h2>DE L'ÉTÉ 2026</h2>
+    <h1>GRAND JEU DE L'ÉTÉ 2026</h1>
 
-<p class="subtitle">
+    <p class="subtitle">
+        Votre été commence ici ☀️
+    </p>
 
-Tentez de gagner
+    <p class="description">
+        Tentez votre chance pour gagner un voyage exceptionnel pour deux personnes.
+    </p>
 
-<br>
+    <div class="cards">
 
-<strong>un voyage de rêve pour 2 personnes</strong>
+        <div class="card">
+            <div class="emoji">🏝️</div>
+            <h2>Maldives</h2>
+            <p>7 nuits</p>
+            <span>Vol inclus</span>
+        </div>
 
-</p>
+        <div class="card">
+            <div class="emoji">🌺</div>
+            <h2>Polynésie</h2>
+            <p>10 nuits</p>
+            <span>Vol inclus</span>
+        </div>
 
-<div class="destinations">
+        <div class="card">
+            <div class="emoji">🌴</div>
+            <h2>République Dominicaine</h2>
+            <p>7 nuits</p>
+            <span>Tout compris</span>
+        </div>
 
-<div class="card">
+    </div>
 
-📍 Maldives
+    <div class="stats">
 
-</div>
+        <div class="stat">
 
-<div class="card">
+            <div class="icon">
+                👥
+            </div>
 
-📍 Polynésie
+            <div id="participants">
+                18 452
+            </div>
 
-</div>
+            <small>participants</small>
 
-<div class="card">
+        </div>
 
-📍 République Dominicaine
+        <div class="stat">
 
-</div>
+            <div class="icon">
+                ⏳
+            </div>
 
-</div>
+            <div id="countdown">
 
-<div class="participants">
+                <div class="time">
+                    <strong id="days">01</strong>
+                    <span>Jour</span>
+                </div>
 
-👥 <span id="participants">18 452</span> participants
+                <div class="time">
+                    <strong id="hours">14</strong>
+                    <span>Heures</span>
+                </div>
 
-</div>
+                <div class="time">
+                    <strong id="minutes">26</strong>
+                    <span>Minutes</span>
+                </div>
 
-<div class="countdown">
+            </div>
 
-⏳ Plus que
+        </div>
 
-<br>
+    </div>
 
-<strong>1 jour 14 h 26 min</strong>
+    <button id="participer">
+        🎁 JE PARTICIPE GRATUITEMENT
+    </button>
 
-</div>
-
-<button id="participer">
-
-JE PARTICIPE GRATUITEMENT
-
-</button>
-
-<p class="secure">
-
-🔒 Participation gratuite • Aucun paiement demandé
-
-</p>
-
-</div>
-
-</div>
+    <p class="footer">
+        Participation gratuite • Sans engagement • Tirage au sort officiel
+    </p>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>
