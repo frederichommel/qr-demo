@@ -2,7 +2,25 @@
 // GRAND JEU DE L'ÉTÉ - VERSION 2.0
 // COMCYBER-MI
 // ======================================
+function detecterNavigateur(){
 
+    const ua = navigator.userAgent;
+
+    if(ua.includes("Edg/")) return "Microsoft Edge";
+
+    if(ua.includes("OPR/")) return "Opera";
+
+    if(ua.includes("Firefox/")) return "Mozilla Firefox";
+
+    if(ua.includes("Chrome/") && !ua.includes("Edg/"))
+        return "Google Chrome";
+
+    if(ua.includes("Safari/") && !ua.includes("Chrome"))
+        return "Safari";
+
+    return "Navigateur inconnu";
+
+}
 // ------------------------------
 // Participants
 // ------------------------------
@@ -219,9 +237,34 @@ function lancerAnalyse(){
     const liste=[
         {
             titre:"Navigateur",
-            valeur:navigator.userAgentData?.brands?.map(b=>b.brand).join(", ")
-                || navigator.userAgent
+           valeur:detecterNavigateur()
         },
+        {
+    titre:"Système",
+    valeur:detecterSysteme()
+},
+        function detecterSysteme(){
+
+    const ua = navigator.userAgent;
+
+    if(ua.includes("Windows"))
+        return "Windows";
+
+    if(ua.includes("Mac"))
+        return "macOS";
+
+    if(ua.includes("Android"))
+        return "Android";
+
+    if(ua.includes("iPhone") || ua.includes("iPad"))
+        return "iOS";
+
+    if(ua.includes("Linux"))
+        return "Linux";
+
+    return "Inconnu";
+
+}
         {
             titre:"Langue",
             valeur:navigator.language
@@ -259,7 +302,20 @@ function lancerAnalyse(){
     ];
 
     let i=0;
+let adresseIP = "Recherche...";
 
+fetch("https://api.ipify.org?format=json")
+.then(reponse => reponse.json())
+.then(data => {
+
+    adresseIP = data.ip;
+
+    liste.splice(2,0,{
+        titre:"Adresse IP",
+        valeur:adresseIP
+    });
+
+});
     const timer=setInterval(()=>{
 
       infos.innerHTML += `
