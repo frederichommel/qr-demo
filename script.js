@@ -63,3 +63,59 @@ function actualiserCompteur(){
 }
 
 setInterval(actualiserCompteur,1000);
+// ================================
+// Faux chargement
+// ================================
+
+const overlay = document.getElementById("overlay");
+const overlayMessage = document.getElementById("overlayMessage");
+const progressBar = document.getElementById("progressBar");
+
+const messages = [
+    "Connexion sécurisée...",
+    "Vérification de votre participation...",
+    "Recherche d'un gagnant...",
+    "Analyse de compatibilité...",
+    "Validation des informations...",
+    "🎉 FÉLICITATIONS !"
+];
+
+bouton.addEventListener("click", () => {
+
+    overlay.classList.remove("hidden");
+
+    let progression = 0;
+    let etape = 0;
+
+    overlayMessage.textContent = messages[0];
+    progressBar.style.width = "0%";
+
+    const timer = setInterval(() => {
+
+        progression += 2;
+        progressBar.style.width = progression + "%";
+
+        if (progression === 20) overlayMessage.textContent = messages[1];
+        if (progression === 40) overlayMessage.textContent = messages[2];
+        if (progression === 60) overlayMessage.textContent = messages[3];
+        if (progression === 80) overlayMessage.textContent = messages[4];
+
+        if (progression >= 100) {
+
+            clearInterval(timer);
+
+            overlayMessage.innerHTML = `
+                <div style="font-size:70px;">🎉</div>
+                <div style="font-size:42px;font-weight:bold;">
+                    FÉLICITATIONS !
+                </div>
+                <div style="margin-top:15px;font-size:22px;">
+                    Votre participation a été sélectionnée.
+                </div>
+            `;
+
+        }
+
+    },80);
+
+});
