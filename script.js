@@ -301,7 +301,7 @@ function afficherRevelation(){
             font-weight:700;
             margin-top:10px;
         ">
-            ATTENTION
+            DÉMONSTRATION DE QUISHING
         </div>
     `;
 
@@ -314,8 +314,8 @@ Vous venez de participer à une démonstration de
 
 <br><br>
 
-Les informations affichées ci-dessus ont été obtenues
-simplement parce que vous avez ouvert cette page.
+Vous n'avez saisi aucune information sur cette page.
+Pourtant, un simple site web peut déjà connaître certains éléments de votre navigateur et de votre appareil.
 
 <br><br>
 
@@ -335,8 +335,30 @@ Imaginez maintenant ce qu'un faux site peut vous demander volontairement :
 
 <br>
 
-<div style="margin-top:25px;font-size:24px;font-weight:bold;color:#ffd54f;">
+<div style="text-align:center;margin-top:35px;">
+
+<img src="images/logo-comcyber-mi.png"
+     style="width:160px;margin-bottom:18px;">
+
+<div style="
+font-size:28px;
+font-weight:bold;
+letter-spacing:1px;">
+
 COMCYBER-MI
+
+</div>
+
+<div style="
+font-size:17px;
+opacity:.9;
+margin-top:8px;">
+
+Commandement du ministère de l'Intérieur<br>
+dans le cyberespace
+
+</div>
+
 </div>
 
 <div style="font-size:18px;opacity:.9;margin-top:8px;">
