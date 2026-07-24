@@ -127,7 +127,7 @@ function actualiserCompteur(){
     countdown.innerHTML = `
 
     <div style="
-    color:#ff3b30;
+    color:#ffffff;
     font-size:30px;
     font-weight:800;
     margin-bottom:12px;
