@@ -177,27 +177,15 @@ h1{
 
 #countdown{
 
-    display:inline-block;
+    display:block;
 
-    margin-top:14px;
+    text-align:center;
 
-    padding:12px 28px;
-
-    background:rgba(170,0,0,.18);
-
-    border:2px solid rgba(255,80,80,.55);
-
-    border-radius:16px;
-
-    color:white;
-
-    font-size:34px;
+    color:#ff3b30;
 
     font-weight:700;
 
-    line-height:1.2;
-
-    box-shadow:0 0 18px rgba(255,0,0,.35);
+    line-height:1.15;
 
 }
 
